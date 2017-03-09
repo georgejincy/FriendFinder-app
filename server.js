@@ -17,7 +17,7 @@ var app = express();
 // Sets an initial port. We"ll use this later in our listener
 var PORT = process.env.PORT || 3040;
 
-/*app.use(express.static(__dirname + '/public'));*/
+app.use(express.static('app/public'));
 
 // BodyParser makes it possible for our server to interpret data sent to it.
 // The code below is pretty standard.
