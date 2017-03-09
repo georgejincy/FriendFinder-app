@@ -32,7 +32,7 @@ module.exports = function(app){
   app.post("/api/friends", function(req, res){
     // Note the code here. Our "server" will respond to requests and let users know their compatible friend
     // It will send back the most compatible friend
-    friendsData.push(req.body);
+
     console.log(req.body);
     //New friend scores
     var newfr_scores = req.body.scores;
@@ -63,8 +63,13 @@ module.exports = function(app){
 
     console.log(compFriendsArr);
 
+    //Push new friend to friendsData
+    friendsData.push(req.body);
+    console.log("Friends array:");
+    console.log(friendsData)
+
     res.send(compFriendsArr[0]);
 
   });
 
-}
+};

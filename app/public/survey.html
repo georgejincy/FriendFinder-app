@@ -12,21 +12,23 @@
 
     <!--Custom CSS file-->
     <style type="text/css">
-        .jumbotron{
-            background: url("https://www.pexels.com/photo/bench-chair-friends-friendship-288583/") no-repeat center center;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
+        #fullscreen{
+           /*  background: url("https://www.pexels.com/photo/bench-chair-friends-friendship-288583/") no-repeat center center;
+           background-size: cover; */
+           background-color: #A4BBBF;
         }
-        .survey-ques{
-            width: 30%;
+        label{
+            font-size: 18px;
+            font-weight: lighter;
         }
+
     </style>
 
     <!-- Added link to the jQuery Library -->
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="fullscreen">
 	<div class="container">
 
         <h1>Survey Questions</h1>
@@ -42,6 +44,7 @@
             <label for="photo">Link to Photo Image (Required)</label>
             <input type="text" class="form-control" id="photo">
           </div>
+          <hr />
         
 
         <h2><strong>Question 1</strong></h2>
@@ -174,7 +177,7 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary submit">Submit</button>
+            <button type="submit" class="btn btn-primary submit btn-lg">Submit</button>
 
         </form>
 
@@ -190,17 +193,21 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 
         <hr />
+    </div>
 
-		<a href="/api/friends">API Friends List</a> | <a href="https://github.com/georgejincy/FriendFinder-app">Github Repo</a>
+        <footer>
+        <div class="container">
 
-	</div>
+		<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/georgejincy/FriendFinder-app">Github Repo</a></p>
+
+	   </div>
+       </footer>
+    </div> <!-- ./ fullsecreen -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
@@ -239,6 +246,8 @@
             // The api returns a compatible friends info
             console.log(data);
             console.log("I'm in post");
+            $("#match-name").text(data.name);
+            $(".modal-body").append("<img src = '" + data.photo + "' />")
             $('#matchModal').modal({show: true});
 
         });
