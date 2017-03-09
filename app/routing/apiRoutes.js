@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on friendsdata.
 // ===============================================================================
 
-var friendsData = require("..data/friends.js");
+var friendsData = require("../data/friends.js");
 
 // ===============================================================================
 // ROUTING
