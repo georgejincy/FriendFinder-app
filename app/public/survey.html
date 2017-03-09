@@ -11,7 +11,17 @@
     <link href="https://bootswatch.com/united/bootstrap.min.css" rel="stylesheet">
 
     <!--Custom CSS file-->
-    <link href = "css/style.css" rel = "stylesheet">
+    <style type="text/css">
+        .jumbotron{
+            background: url("https://www.pexels.com/photo/bench-chair-friends-friendship-288583/") no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+        }
+        .survey-ques{
+            width: 30%;
+        }
+    </style>
 
     <!-- Added link to the jQuery Library -->
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
@@ -25,12 +35,12 @@
         <h2><strong>About You</strong></h2>
         <form>
           <div class="form-group">
-            <label for="email">Name (Required)</label>
-            <input type="email" class="form-control" id="email">
+            <label for="name">Name (Required)</label>
+            <input type="text" class="form-control" id="name">
           </div>
           <div class="form-group">
-            <label for="pwd">Link to Photo Image (Required)</label>
-            <input type="password" class="form-control" id="pwd">
+            <label for="photo">Link to Photo Image (Required)</label>
+            <input type="text" class="form-control" id="photo">
           </div>
         
 
@@ -89,7 +99,7 @@
         <h2><strong>Question 5</strong></h2>
             <div class = "form-group">
                 <label for = "ques-5">People can rarely upset you.</label>
-                <select required class="form-control survey-ques" id = "ques-1">
+                <select required class="form-control survey-ques" id = "ques-5">
                   <option value="" disabled selected>Select your option</option>
                   <option value="5">1 (Strongly Disagree)</option>
                   <option value="2">2</option>
@@ -164,15 +174,77 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary submit">Submit</button>
 
         </form>
 
+        <div class="modal fade" tabindex="-1" role="dialog" id="matchModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Best Match</h4>
+              </div>
+              <div class="modal-body">
+                <p id ="match-name"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
         <hr />
 
-		<a href="#">API Friends List</a> | <a href="#">Github Repo</a>
-        <br />
+		<a href="/api/friends">API Friends List</a> | <a href="https://github.com/georgejincy/FriendFinder-app">Github Repo</a>
+
 	</div>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // In this case the associated code "saves" the data to the friendsdata.js file 
+
+    $('.submit').on('click', function(event){
+        event.preventDefault();
+
+        //Grab the form elements
+        var newFriend = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            scores: [
+            parseInt($('#ques-1').val().trim(), 10), 
+            parseInt($('#ques-2').val().trim(), 10), 
+            parseInt($('#ques-3').val().trim(), 10), 
+            parseInt($('#ques-4').val().trim(), 10), 
+            parseInt($('#ques-5').val().trim(), 10), 
+            parseInt($('#ques-6').val().trim(), 10), 
+            parseInt($('#ques-7').val().trim(), 10), 
+            parseInt($('#ques-8').val().trim(), 10), 
+            parseInt($('#ques-9').val().trim(), 10), 
+            parseInt($('#ques-10').val().trim(), 10), 
+            ]
+        };
+
+        console.log(newFriend);
+
+        $.post("/api/friends", newFriend, function(data){
+
+            // The api returns a compatible friends info
+            console.log(data);
+            console.log("I'm in post");
+            $('#matchModal').modal({show: true});
+
+        });
+
+
+    });
+
+</script>
+

@@ -34,6 +34,36 @@ module.exports = function(app){
     // It will send back the most compatible friend
     friendsData.push(req.body);
     console.log(req.body);
+    //New friend scores
+    var newfr_scores = req.body.scores;
+    var compFriendsArr = [];
+
+
+    //Find a compatible friend
+    for(var i=0; i<friendsData.length; i++){
+    	console.log(friendsData[i].scores);
+    	var fr_scores = friendsData[i].scores;
+    	var tot = 0;
+
+    	//Loop through the scores and add the absolute difference in scores
+    	for(var j=0; j<fr_scores.length; j++){
+    		tot += Math.abs(newfr_scores[j] - fr_scores[j]);
+    		console.log("newfr_scores:" + newfr_scores[j] + "fr_scores: " + fr_scores[j] + "total " + tot);
+    	}
+
+    	compFriendsArr.push({name: friendsData[i].name, photo: friendsData[i].photo, total: tot});
+    }
+
+    console.log(compFriendsArr);
+
+    //Find the most compatible friend by sorting the compFriendsArr by total score
+    compFriendsArr.sort(function(a,b) {return (a.total > b.total) ? 1 : ((b.total > a.total) ? -1 : 0);} ); 
+
+    console.log("Sorted: \n");
+
+    console.log(compFriendsArr);
+
+    res.send(compFriendsArr[0]);
 
   });
 
