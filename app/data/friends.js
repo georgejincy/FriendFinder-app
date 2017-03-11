@@ -6,7 +6,7 @@
 var friendsArray = [
   {
   "name":"Gugu",
-  "photo":"../public/images/gugu.jpg",
+  "photo":"images/gugu.jpg",
   "scores":[
       5,
       1,
@@ -22,7 +22,7 @@ var friendsArray = [
 },
 {
   "name":"Rufus",
-  "photo":"../public/images/rufus.jpg",
+  "photo":"images/rufus.jpg",
   "scores":[
       4,
       2,
@@ -38,7 +38,7 @@ var friendsArray = [
 },
 {
   "name":"Jenelle",
-  "photo":"../public/images/jenelle.jpg",
+  "photo":"images/jenelle.jpg",
   "scores":[
       3,
       1,

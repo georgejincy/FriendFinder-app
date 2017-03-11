@@ -35,8 +35,8 @@
         <h1>Survey Questions</h1>
         <hr />
 
+        <form class = "well">
         <h2><strong>About You</strong></h2>
-        <form>
           <div class="form-group">
             <label for="name">Name (Required)</label>
             <input type="text" class="form-control" id="name">
@@ -236,7 +236,7 @@
             parseInt($('#ques-7').val().trim(), 10), 
             parseInt($('#ques-8').val().trim(), 10), 
             parseInt($('#ques-9').val().trim(), 10), 
-            parseInt($('#ques-10').val().trim(), 10), 
+            parseInt($('#ques-10').val().trim(), 10)
             ]
         };
 
@@ -248,7 +248,7 @@
             console.log(data);
             console.log("I'm in post");
             $("#match-name").text(data.name);
-            $(".modal-body").append("<img src = '" + data.photo + "' />")
+            $(".modal-body").append("<img src = '" + data.photo + "' class= 'match-img'/>")
             $('#matchModal').modal({show: true});
 
         });
