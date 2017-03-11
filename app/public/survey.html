@@ -248,7 +248,7 @@
             console.log(data);
             console.log("I'm in post");
             $("#match-name").text(data.name);
-            $(".modal-body").append("<img src = '" + data.photo + "' class= 'match-img'/>")
+            $(".modal-body").append("<img src = '" + data.photo + "' class= 'match-img' alt = '" + data.name + "'/>")
             $('#matchModal').modal({show: true});
 
         });
