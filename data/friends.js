@@ -6,7 +6,7 @@
 var friendsArray = [
   {
   "name":"Gugu",
-  "photo":"images/gugu.jpg",
+  "photo":"https://static.pexels.com/photos/91227/pexels-photo-91227.jpeg",
   "scores":[
       5,
       1,
@@ -22,7 +22,7 @@ var friendsArray = [
 },
 {
   "name":"Rufus",
-  "photo":"images/rufus.jpg",
+  "photo":"https://static.pexels.com/photos/119705/pexels-photo-119705.jpeg",
   "scores":[
       4,
       2,
@@ -38,7 +38,7 @@ var friendsArray = [
 },
 {
   "name":"Jenelle",
-  "photo":"images/jenelle.jpg",
+  "photo":"https://static.pexels.com/photos/27411/pexels-photo-27411.jpg",
   "scores":[
       3,
       1,
