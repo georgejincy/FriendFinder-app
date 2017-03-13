@@ -12,18 +12,7 @@
 
     <!--Custom CSS file-->
      <link rel="stylesheet" type="text/css" href="css/style.css">
-<!--     <style type="text/css">
-    #fullscreen{
-       /*  background: url("https://www.pexels.com/photo/bench-chair-friends-friendship-288583/") no-repeat center center;
-       background-size: cover; */
-       background-color: #A4BBBF;
-    }
-    label{
-        font-size: 18px;
-        font-weight: lighter;
-    }
 
-</style> -->
 
     <!-- Added link to the jQuery Library -->
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
@@ -191,6 +180,7 @@
               </div>
               <div class="modal-body">
                 <p id ="match-name"></p>
+                <div id = "match-photo"></div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -248,10 +238,24 @@
             console.log(data);
             console.log("I'm in post");
             $("#match-name").text(data.name);
-            $(".modal-body").append("<img src = '" + data.photo + "' class= 'match-img' alt = '" + data.name + "'/>")
+            $("#match-photo").html("<img src = '" + data.photo + "' class= 'match-img' alt = '" + data.name + "'/>")
             $('#matchModal').modal({show: true});
 
         });
+
+        //Clear survey when submitting
+        $('#name').val("");
+        $('#photo').val("");
+        $('#ques-1').val("");
+        $('#ques-2').val("");
+        $('#ques-3').val("");
+        $('#ques-4').val("");
+        $('#ques-5').val("");
+        $('#ques-6').val("");
+        $('#ques-7').val("");
+        $('#ques-8').val("");
+        $('#ques-9').val("");
+        $('#ques-10').val("");
 
 
     });
