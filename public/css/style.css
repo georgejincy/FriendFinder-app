@@ -1,4 +1,7 @@
 
+ body{
+    background-color: #ccc;
+ }
  .jumbotron{
         background: url("https://static.pexels.com/photos/8268/pexels-photo.jpg");
         background-size: 100%;
