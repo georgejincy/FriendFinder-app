@@ -1,7 +1,8 @@
 
  .jumbotron{
-        background: url("../images/friends.jpeg") no-repeat center center;
-        background-size: cover;
+        background: url("https://static.pexels.com/photos/8268/pexels-photo.jpg");
+        background-size: 100%;
+        background-position:50% 50%;
         color: #C34113;
         text-align: center;
     }
@@ -9,8 +10,8 @@
         width: 30%;
     }
 #fullscreen{
-        background: url("../images/friends.jpeg") no-repeat center center;
-        background-size: cover;
+        background: url("https://static.pexels.com/photos/246805/pexels-photo-246805.jpeg") no-repeat center center;
+        background-size: 100%;
     }
 .match-img{
     height: 400px;
