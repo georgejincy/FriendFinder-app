@@ -13,7 +13,7 @@
         width: 30%;
     }
 #fullscreen{
-        background: url("https://static.pexels.com/photos/246805/pexels-photo-246805.jpeg") no-repeat center center;
+        background: rgba(40, 171, 250, 0.55), url("https://static.pexels.com/photos/246805/pexels-photo-246805.jpeg") no-repeat center center;
         background-size: 100%;
     }
 .match-img{
