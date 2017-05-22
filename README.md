@@ -13,13 +13,32 @@ What to install and how for local development and testing purposes
 
 ```
 - node.js: visit node.js and download..
-- express: npm install express
+- run: npm install --> to install all the dependencies
 ```
+
+Clone or fork this repo:
+
+```
+https://github.com/georgejincy/FriendFinder-app.git
+```
+
+Run the app:
+
+```
+node server
+```
+
+You can now navigate to 'localhost:8080/' to access FriendFinder.
+
+## Built With
+
+* Sublime Text
+
 
 ## Features
 
 Customer view
-![alt tag]('http://g.recordit.co/GAdpDIll1b.gif')
+![alt tag](http://g.recordit.co/GAdpDIll1b.gif)
 
 ## Authors
 
