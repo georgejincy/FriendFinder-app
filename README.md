@@ -1,12 +1,11 @@
 # FriendFinder-app
-A full-stack friend finder application using express node.js
+FriendFinder is a full stack compatibility based web application that uses the results from user surveys to compare answers to the other user results and then displays the name and picture of the user with best overall match.
 
 ## Technologies used
 - node.js
 - express
 
 ## Getting Started
-
 
 ### Prerequisities
 
@@ -20,7 +19,7 @@ What to install and how for local development and testing purposes
 ## Features
 
 Customer view
-![alt tag](images/customerview.png)
+![alt tag]('http://g.recordit.co/GAdpDIll1b.gif')
 
 ## Authors
 
