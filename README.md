@@ -38,7 +38,7 @@ You can now navigate to 'localhost:8080/' to access FriendFinder.
 ## Features
 
 Customer view
-![alt tag] (http://g.recordit.co/GAdpDIll1b.gif)
+![alt tag](http://g.recordit.co/GAdpDIll1b.gif)
 
 ## Authors
 
